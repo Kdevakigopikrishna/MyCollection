@@ -146,8 +146,103 @@ Let Code:-5
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Streaming and Download</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .movie-list {
+            list-style: none;
+            padding: 0;
+        }
+        .movie-list li {
+            margin-bottom: 10px;
+        }
+        .download-btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Streaming and Download</h1>
+        <ul class="movie-list" id="movieList">
+            <!-- Movie items will be added here dynamically -->
+        </ul>
+    </div>
 
-krishnavanii
+    <script>
+        // Sample movie data (could be fetched from a server in real-world scenario)
+        const movies = [
+            { title: "Movie 1", downloadLink: "http://example.com/movie1.mp4" },
+            { title: "Movie 2", downloadLink: "http://example.com/movie2.mp4" },
+            { title: "Movie 3", downloadLink: "http://example.com/movie3.mp4" }
+            // Add more movie objects as needed
+        ];
+
+        // Function to generate movie list HTML
+        function generateMovieList() {
+            const movieList = document.getElementById("movieList");
+            movieList.innerHTML = "";
+            movies.forEach(movie => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `
+                    <strong>${movie.title}</strong>
+                    <button class="download-btn" onclick="downloadMovie('${movie.downloadLink}')">Download</button>
+                `;
+                movieList.appendChild(listItem);
+            });
+        }
+
+        // Function to simulate movie download (in real-world, this would be handled by backend)
+        function downloadMovie(downloadLink) {
+            alert("Simulating download: " + downloadLink);
+            // You can implement actual download logic here using HTML5 download attribute or other techniques
+        }
+
+        // Generate movie list when the page loads
+        window.onload = generateMovieList;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+Let Code:-6
+
+
 
 
 
