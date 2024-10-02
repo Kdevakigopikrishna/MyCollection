@@ -37,3 +37,30 @@ img=img.resize((int(img.width/2),int(img.height/2)))
 print("it is size of img after change",img.width,img.height)
 img.show()
 
+
+
+convert  the  image into gray_scale image 
+
+
+
+
+from PIL import Image
+
+# Load the image
+f = "C:\\Users\\harsh\\Downloads\\abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai.jpg"
+img = Image.open(f)
+
+# Convert the image to grayscale
+gray_img = img.convert("L")
+
+# Show the grayscale image
+gray_img.show()
+
+
+
+
+
+
+
+
+
