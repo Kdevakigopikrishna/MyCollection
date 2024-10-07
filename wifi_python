@@ -1,0 +1,102 @@
+pip install wifi
+
+
+
+
+
+it wiill intmate u networks like only wifi
+
+
+
+
+
+import subprocess
+
+def list_wifi_networks():
+    try:
+        # Run the netsh command to get available networks
+        output = subprocess.check_output(['netsh', 'wlan', 'show', 'network'], text=True)
+        
+        # Print the outputq
+        print("Available Wi-Fi Networks:")
+        print(output)
+
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e.output}")
+
+# Call the function to list networks
+list_wifi_networks()
+
+
+
+
+it will give password of that network
+but allready they one netwok is innole so u need to replace with that u r network name
+
+
+
+
+import subprocess
+import re
+
+def list_wifi_networks():
+    try:
+        # Run the netsh command to get available networks
+        output = subprocess.check_output(['netsh', 'wlan', 'show', 'network'], text=True)
+        
+        # Print the output
+        print("Available Wi-Fi Networks:")
+        print(output)
+
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e.output}")
+
+def get_wifi_password(network_name):
+    try:
+        # Run the netsh command to get the password for the specified network
+        output = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', network_name, 'key=clear'], text=True)
+
+        # Use regular expressions to find the password in the output
+        password_match = re.search(r'Key Content\s+:\s+(.*)', output)
+        
+        if password_match:
+            return password_match.group(1).strip()  # Return the found password
+        else:
+            print(f"No password found for '{network_name}' or it is an open network.")
+            return None
+
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e.output}")
+        return None
+
+def connect_to_wifi(network_name):
+    try:
+        # Create a command to connect to the specified Wi-Fi network using its profile
+        command = ['netsh', 'wlan', 'connect', f'name={network_name}']
+
+        # Execute the command
+        subprocess.check_output(command, text=True)
+        print(f"Connected to '{network_name}'.")
+
+    except subprocess.CalledProcessError as e:
+        print(f"Error connecting to '{network_name}': {e.output}")
+
+# Call the function to list networks
+list_wifi_networks()
+
+# Specify the network name you want to connect to
+network_name = 'VBHB_301 5Ghz'  # Replace with your network name
+password = get_wifi_password(network_name)
+
+if password:
+    print(f"Password for '{network_name}': {password}")
+    connect_to_wifi(network_name)
+else:
+    print("Could not retrieve password, unable to connect.")
+
+
+
+
+
+
+
