@@ -176,7 +176,25 @@ except Exception as e:
 
 
 
+what every   u  will enter it will speak:-pip install pyttsx3,  pip install SpeechRecognition pyttsx3 pyaudio
 
+
+
+import pyttsx3
+
+# Initialize the text-to-speech engine
+engine = pyttsx3.init()
+
+# Get user input
+message = input("Enter a message: ")
+
+# Make the engine say the message
+engine.say(message)
+
+# Run the speech engine
+engine.runAndWait()
+
+ 
 
 
 
