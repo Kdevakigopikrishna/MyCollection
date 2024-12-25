@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: orange;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        label, input {
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome User</h1>
+        <h3>*Note</h3>
+        <h6>Dear student, please enter your marks as per your portal order wise.</h6>
+        <form action="" method="post">
+            <label for="username">User Name</label>
+            <input type="text" id="username" name="data">
+            <label for="module-1-t1">Module-1-T1</label>
+            <input type="text" id="module-1-t1" name="m1t1">
+            <label for="module-1-t2-review-1">Module1-T2 Review 1</label>
+            <input type="text" id="module-1-t2-review-1" name="m1r1">
+            <label for="module-1-t2-review-2">Module1-T2 Review 2</label>
+            <input type="text" id="module-1-t2-review-2" name="m1r2">
+            <label for="module-1-t3-ieee-apa-format-1">Module1-T3 IEEE / APA Format : 1</label>
+            <input type="text" id="module-1-t3-ieee-apa-format-1" name="m1t3i1">
+            <label for="module-1-t3-voice-ppt-1">Module1-T3 A Voice in-built PPT : 1</label>
+            <input type="text" id="module-1-t3-voice-ppt-1" name="m1t3p1">
+            <label for="module-1-t4-online-test-1">Module1-T4 Online Test : 1</label>
+            <input type="text" id="module-1-t4-online-test-1" name="m1t4">
+            <label for="module-1-t5-assignment-cla-1">Module1-T5 Assignment / CLA : 1</label>
+            <input type="text" id="module-1-t5-assignment-cla-1" name="m1t5c1">
+            <label for="module-1-t5-assignment-cla-2">Module1-T5 Assignment / CLA : 2</label>
+            <input type="text" id="module-1-t5-assignment-cla-2" name="m1t5c2">
+            <label for="module-1-t5-assignment-cla-3">Module1-T5 Assignment / CLA : 3</label>
+            <input type="text" id="module-1-t5-assignment-cla-3" name="m1t5c3">
+            <label for="module-1-t5-assignment-cla-4">Module1-T5 Assignment / CLA : 4</label>
+            <input type="text" id="module-1-t5-assignment-cla-4" name="m1t5c4">
+            <label for="module-1-t5-assignment-cla-5">Module1-T5 Assignment / CLA : 5</label>
+            <input type="text" id="module-1-t5-assignment-cla-5" name="m1t5c5">
+            <button type="submit">Submit</button>
+        </form>
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Sanitize the input data
+            $name = htmlspecialchars($_POST["data"]);
+            
+            // Convert the input data to uppercase
+            $uppercaseName = strtoupper($name);
+            
+            // Display the uppercase name
+            echo "<h2>Uppercase Name: " . $uppercaseName . "</h2>";
+        }
+        ?>
+    </div>
+</body>
+</html>
