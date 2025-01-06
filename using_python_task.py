@@ -1,6 +1,5 @@
-what will u say it printit and if issue try this install:-pip install SpeechRecognition and also pip install PyAudio.
-
-
+# task-1
+# what will u say it printit and if issue try this install:-pip install SpeechRecognition and also pip install PyAudio.
 
 import speech_recognition as sr
 
@@ -24,61 +23,16 @@ except sr.RequestError:
 
 
 
-  perform task to  just open google 
 
 
 
 
+#task 2
+#let here if  u ask any question it will provied u just links or websites etc... but not provied what is what!
+#and if issue try this install:-pip install googlesearch-python
 
 
-
-
-
-  import speech_recognition as sr
-import subprocess
-import webbrowser
-
-# Initialize recognizer
-recognizer = sr.Recognizer()
-
-# Use the microphone as a source for input
-with sr.Microphone() as source:
-    print("Listening for your command...")
-    audio = recognizer.listen(source)
-
-try:
-    # Recognize the voice input
-    command = recognizer.recognize_google(audio)
-    print(f"You said: {command}")
-
-    # Check if the command is to open Google
-    if "open google" in command.lower():
-        print("Opening Google in your web browser...")
-        webbrowser.open("https://www.google.com")
-
-    # Check if the command is to open Notepad
-    elif "open notepad" in command.lower():
-        print("Opening Notepad...")
-        subprocess.Popen(['notepad.exe'])
-
-    else:
-        print("Sorry, I don't understand the command.")
-
-except sr.UnknownValueError:
-    print("Could not understand the audio.")
-except sr.RequestError:
-    print("Could not request results; check your internet connection.")
-
-
-
-
-let here if  u ask any question it will provied u just links or websites etc... but not provied what is what!
-and if issue try this install:-pip install googlesearch-python
-
-
-
-
-  import speech_recognition as sr
+import speech_recognition as sr
 from googlesearch import search
 
 # Initialize recognizer
@@ -111,15 +65,13 @@ except sr.RequestError:
 
 
 
+#task 3
 
-let here will u get the ,if u ask a question it wiil give u a summary or what is what and it may be 
-  give the links also ect....
-  and if an issue tyr this :-pip install beautifulsoup4 requests
+#let here will u get the ,if u ask a question it wiil give u a summary or what is what and it may be 
+ # give the links also ect....
+  #and if an issue tyr this :-pip install beautifulsoup4 requests
 
-
-
-
-    import speech_recognition as sr
+import speech_recognition as sr
 from googlesearch import search
 import requests
 from bs4 import BeautifulSoup
@@ -148,7 +100,6 @@ recognizer = sr.Recognizer()
 with sr.Microphone() as source:
     print("Listening for your search query...")
     audio = recognizer.listen(source)
-
 try:
     # Recognize the voice input
     command = recognizer.recognize_google(audio)
@@ -166,7 +117,6 @@ try:
     content = extract_content_from_url(first_result_url)
     print("\nHere is the extracted information:")
     print(content)
-    
 except sr.UnknownValueError:
     print("Could not understand the audio.")
 except sr.RequestError:
@@ -176,27 +126,20 @@ except Exception as e:
 
 
 
-what every   u  will enter it will speak:-pip install pyttsx3,  pip install SpeechRecognition pyttsx3 pyaudio
 
-
+#task 4
+#what every u  will enter it will speak:-pip install pyttsx3,  pip install SpeechRecognition pyttsx3 pyaudio
 
 import pyttsx3
-
 # Initialize the text-to-speech engine
 engine = pyttsx3.init()
-
 # Get user input
 message = input("Enter a message: ")
-
 # Make the engine say the message
 engine.say(message)
-
 # Run the speech engine
 engine.runAndWait()
 
- 
 
 
-
-      
 
